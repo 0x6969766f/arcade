@@ -6,6 +6,7 @@ import { useMemo, useState } from 'react';
 import { Pagination } from '@/components/Pagination';
 import { findGames } from '@/utils/search';
 import { naturalSorter } from '@/utils/sort';
+import Head from 'next/head';
 
 const font = Cutive_Mono({ subsets: ['latin'], weight: '400' });
 
@@ -23,17 +24,25 @@ export default function Home({ data }: Props) {
   );
 
   return (
-    <main className={`${font.className} p-8`}>
-      <div className="flex justify-between">
-        <Filters games={data} onSearch={(params) => setSearchParams(params)} />
-        <Pagination
-          currentPage={currentPage}
-          onChangePage={(page) => setCurrentPage(page)}
-          totalGames={!!searchParams ? games.length : data.length}
-        />
-      </div>
-      <Games games={games} isSearched={!!searchParams} />
-    </main>
+    <>
+      <Head>
+        <title>Arcade</title>
+      </Head>
+      <main className={`${font.className} p-8`}>
+        <div className="flex justify-between">
+          <Filters
+            games={data}
+            onSearch={(params) => setSearchParams(params)}
+          />
+          <Pagination
+            currentPage={currentPage}
+            onChangePage={(page) => setCurrentPage(page)}
+            totalGames={!!searchParams ? games.length : data.length}
+          />
+        </div>
+        <Games games={games} isSearched={!!searchParams} />
+      </main>
+    </>
   );
 }
 
