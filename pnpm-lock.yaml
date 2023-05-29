@@ -25,6 +25,9 @@ dependencies:
   eslint-config-next:
     specifier: 13.4.4
     version: 13.4.4(eslint@8.41.0)(typescript@5.0.4)
+  natural-compare-lite:
+    specifier: ^1.4.0
+    version: 1.4.0
   next:
     specifier: 13.4.4
     version: 13.4.4(react-dom@18.2.0)(react@18.2.0)
@@ -45,6 +48,9 @@ dependencies:
     version: 5.0.4
 
 devDependencies:
+  '@types/natural-compare-lite':
+    specifier: ^1.4.0
+    version: 1.4.0
   eslint-config-prettier:
     specifier: ^8.8.0
     version: 8.8.0(eslint@8.41.0)
@@ -296,6 +302,10 @@ packages:
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: false
+
+  /@types/natural-compare-lite@1.4.0:
+    resolution: {integrity: sha512-ZDcj/yWsRPacqKPpCExWWFq9X1JQwEOfHsu8deN1Qfa6M02z6tN4DK6AMf2IkM7709gp3QW6Bo7m2NFDhA485w==}
+    dev: true
 
   /@types/node-fetch@2.6.4:
     resolution: {integrity: sha512-1ZX9fcN4Rvkvgv4E6PAY5WXUFWFcRWxZa3EW83UjycOB9ljJCedb2CupIP4RZMEwF/M3eTcCihbBRgwtGbg5Rg==}
@@ -1870,6 +1880,10 @@ packages:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  /natural-compare-lite@1.4.0:
+    resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
+    dev: false
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}

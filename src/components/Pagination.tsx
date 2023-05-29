@@ -16,20 +16,23 @@ export const Pagination = ({
   const noPreviousPage = currentPage === 1;
   const noNextPage = totalGames > range.from && totalGames < range.to;
   return (
-    <div className="flex">
+    <div className="flex items-center">
+      <span>{totalGames} games</span>
+      <span className="px-1">|</span>
       <button
         className={clsx(noPreviousPage && 'opacity-50')}
         disabled={noPreviousPage}
         onClick={() => onChangePage(currentPage - 1)}
       >
-        Back
+        ◀
       </button>
+      <span className="px-1">|</span>
       <button
         className={clsx(noNextPage && 'opacity-50')}
         disabled={noNextPage}
         onClick={() => onChangePage(currentPage + 1)}
       >
-        Next
+        ▶
       </button>
     </div>
   );

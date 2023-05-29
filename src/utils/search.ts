@@ -1,6 +1,7 @@
 import { SearchParams } from '@/components/Filters';
 import { Game } from './notion';
 import { PAGE_SIZE } from './constants';
+import { naturalSorter } from './sort';
 
 export const getCurrentRange = (currentPage: number) => {
   return {
@@ -15,10 +16,9 @@ export const findGames = (
   searchParams: SearchParams | undefined,
 ) => {
   const range = getCurrentRange(currentPage);
-  console.log(searchParams);
 
   if (!searchParams) {
-    return games.slice(range.from, range.to);
+    return games.sort(naturalSorter('name')).slice(range.from, range.to);
   }
 
   const { name, platform, owner } = searchParams;
@@ -39,5 +39,5 @@ export const findGames = (
     results = results.filter((game) => game.owner === owner);
   }
 
-  return results.slice(range.from, range.to);
+  return results.sort(naturalSorter('name')).slice(range.from, range.to);
 };

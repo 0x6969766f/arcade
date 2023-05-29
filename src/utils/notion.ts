@@ -1,4 +1,5 @@
 import { Client } from '@notionhq/client';
+import { Owner, Platform } from './games';
 
 // example:
 // https://github.com/morethanmin/morethan-log/blob/main/src/libs/apis/getPosts.ts
@@ -37,7 +38,7 @@ type Entry = {
       type: string;
       select: {
         id: string;
-        name: string;
+        name: Owner;
         color: string;
       };
     };
@@ -46,7 +47,7 @@ type Entry = {
       type: string;
       select: {
         id: string;
-        name: string;
+        name: Platform;
         color: string;
       };
     };
@@ -77,8 +78,8 @@ type Entry = {
 
 export type Game = {
   name: string;
-  owner: string;
-  platform: string;
+  owner: Owner;
+  platform: Platform;
   wishlist: boolean;
 };
 
